@@ -27,7 +27,7 @@ Design and set up a Virtual Private Cloud (VPC) with both public and private sub
 4. Set the IPv4 CIDR block to "10.0.0.0/16".
 5. Click "Create VPC".
 
-- [Link to VPC architecture diagram](./KCVPC%20-%20src1.PNG))
+- [Screenshot link to my VPC creation](./KCVPC%20-%20src1.PNG))
 
 ### 2. Create Subnets
 - **Public Subnet:**
@@ -42,7 +42,7 @@ Design and set up a Virtual Private Cloud (VPC) with both public and private sub
 6. Click "Create Subnet".
 
 
-- [Link to VPC architecture diagram](./KCVPC%20-%20src_2.PNG))
+- [My VPC architecture diagram](./KCVPC%20-%20src_2.PNG))
 
 - **Private Subnet:**
   - **Name:** PrivateSubnet
@@ -53,7 +53,7 @@ Design and set up a Virtual Private Cloud (VPC) with both public and private sub
 3. Set the IPv4 CIDR block to "10.0.2.0/24".
 4. Choose an Availability Zone (preferably the same as the Public Subnet).
 
-- [Link to VPC architecture diagram](./KCVPC%20-%20scr3.PNG))
+- [Screenshot of created private subnet](./KCVPC%20-%20scr3.PNG))
 
 ### 3. Configure an Internet Gateway (IGW)
 1. In the VPC Dashboard, click on "Internet Gateways" and then "Create Internet Gateway".
@@ -62,8 +62,8 @@ Design and set up a Virtual Private Cloud (VPC) with both public and private sub
 4. Once created, select the IGW and click "Actions" -> "Attach to VPC".
 5. Select "KCVPC" and click "Attach".
 
-- [Link to VPC architecture diagram](./KCVPC-src5.PNG))
-- [Link to VPC architecture diagram](./KCVPC-src6.PNG))
+- [Link to screenshot of my Created IGW](./KCVPC-src5.PNG))
+- [Screenshot 2 - Internet Gateway](./KCVPC-src6.PNG))
 
 ### 4. Configure Route Tables
 - **Public Route Table:**
@@ -80,8 +80,8 @@ Design and set up a Virtual Private Cloud (VPC) with both public and private sub
 6. Click "Save routes".
 7. Click on the "Subnet Associations" tab, "Edit subnet associations", and associate the "PublicSubnet".
 
-- [Link to VPC architecture diagram](./KCVPC-src7.PNG))
-- [Link to VPC architecture diagram](./KCVPC-src8.PNG))
+- [Screenshot ot created route table](./KCVPC-src7.PNG))
+- [Screenshot 2](./KCVPC-src8.PNG))
 
 - **Private Route Table:**
   - **Name:** PrivateRouteTable
@@ -92,7 +92,7 @@ Design and set up a Virtual Private Cloud (VPC) with both public and private sub
 3. Do not add any routes to the internet.
 4. Associate the "PrivateSubnet" with this route table.
 
-- [Link to VPC architecture diagram](./KCVPC-src9.PNG))
+- [Private route table screenshot](./KCVPC-src9.PNG))
 
 ### 5. Configure NAT Gateway
 1. In the VPC Dashboard, click on "NAT Gateways" and then "Create NAT Gateway".
@@ -104,7 +104,7 @@ Design and set up a Virtual Private Cloud (VPC) with both public and private sub
    - Target: The ID of the NAT Gateway created earlier (e.g., nat-xxxxxx).
 6. Click "Save routes".
 
-- [Link to VPC architecture diagram](./KCVPC-src10.PNG))
+- [NAT Gateway configured screenshot link](./KCVPC-src10.PNG))
 
 ### 6. Set Up Security Groups
 - **Security Group for Public Instances (e.g., web servers):**
@@ -168,20 +168,20 @@ Design and set up a Virtual Private Cloud (VPC) with both public and private sub
 4. Launch the instance.
 5. Verify that the instance can access the internet through the NAT Gateway by SSH into the Public Instance and from there SSH into the Private Instance and check internet connectivity.
 
-- [Link to VPC architecture diagram](./KCVPC-src13-%20Two%20instance%20running%20-%20Private%20and%20Public%20instance.PNG))
-- [Link to VPC architecture diagram](./KCVPC-src14.PNG))
-- [Link to VPC architecture diagram](./KCVPC-src16%20-%20Now%20able%20to%20login%20to%20the%20private%20instance%20from%20the%20public%20instance%20IP%20now..PNG))
+- [EC2 instance running - Screenshot 1](./KCVPC-src13-%20Two%20instance%20running%20-%20Private%20and%20Public%20instance.PNG))
+- [EC2 Instance screenshot 2](./KCVPC-src14.PNG))
+- [EC@ instance screenshot 3](./KCVPC-src16%20-%20Now%20able%20to%20login%20to%20the%20private%20instance%20from%20the%20public%20instance%20IP%20now..PNG))
 
 ## Deliverables
 
 1. **Detailed Report with Screenshots:**
-   - [Link to detailed report](.//)
+   - Written above
 
 2. **VPC Architecture Diagram:**
-   - [Link to VPC architecture diagram](./KCVPC%20-%20VPC%20Architecture.PNG)
+   Included above
 
 3. **Component Explanations:**
-   - **VPC:** A logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define.
+   - **VPC:** This is a logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define.
    - **Subnets:** Subdivisions within the VPC, where you can group instances based on security and operational needs.
    - **Internet Gateway (IGW):** Allows instances in the VPC to access the internet.
    - **NAT Gateway:** A managed NAT service that enables instances in a private subnet to connect to the internet or other AWS services but prevents the internet from initiating a connection with those instances.
